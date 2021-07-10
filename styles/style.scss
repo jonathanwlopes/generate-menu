@@ -11,7 +11,6 @@
 
     &__item {
       position: relative;
-
       &--title {
         color: #bf7e04;
         cursor: pointer;
@@ -30,18 +29,24 @@
       opacity: 0.25;
       transform: translateX(-50%) rotateX(-90deg);
       position: absolute;
-      left: 50%;
+      left: 100%;
 
-      // &--item{
-      //   background-color: red;
-      //   position: relative;
-      // }
+      &:hover {
+        .#{departments}__categories {
+          opacity: 1;
+          transform: rotateX(0) translateX(20%);
+        }
+      }
+
+      &--link {
+        color: red;
+      }
     }
 
-    // &__categories{
-    //   background-color: gray;
-    //   position: absolute;
-    //   margin-left: 50px;
-    // }
+    &__categories {
+      opacity: 0.25;
+      transform: translateX(-50%) rotateX(-90deg);
+      list-style: none;
+    }
   }
 }

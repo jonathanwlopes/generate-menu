@@ -25,7 +25,19 @@
   opacity: 0.25;
   transform: translateX(-50%) rotateX(-90deg);
   position: absolute;
-  left: 50%;
+  left: 100%;
+}
+#root .departments__sub-departments:hover .departments__categories {
+  opacity: 1;
+  transform: rotateX(0) translateX(20%);
+}
+#root .departments__sub-departments--link {
+  color: red;
+}
+#root .departments__categories {
+  opacity: 0.25;
+  transform: translateX(-50%) rotateX(-90deg);
+  list-style: none;
 }
 
 /*# sourceMappingURL=style.css.map */
