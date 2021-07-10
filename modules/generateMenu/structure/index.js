@@ -42,7 +42,7 @@ export const printDepartments = ({ departments, divMaster }) => {
     const _link = Element({
       tag: "span",
       textContent: department.name,
-      classList: ["departments__item--title"],
+      classList: ["departments--title"],
     });
 
     _item.appendChild(_link);
@@ -67,7 +67,7 @@ export const printSubDepartments = ({ subDepartments, divMaster }) => {
   for (let subDepartment of subDepartments) {
     const _item = Element({
       tag: "li",
-      classList: ["departments__item"],
+      classList: ["departments__sub-departments__item"],
     });
 
     divMaster.appendChild(_item);
@@ -76,13 +76,16 @@ export const printSubDepartments = ({ subDepartments, divMaster }) => {
       tag: "a",
       textContent: subDepartment.name,
       href: subDepartment.link,
-      classList: ["departments__sub-departments--link"],
+      classList: ["departments--link"],
     });
 
     _item.appendChild(_link);
 
     if (subDepartment.category) {
-      const _list = Element({ tag: "ul", classList: ["departments__categories"] });
+      const _list = Element({
+        tag: "ul",
+        classList: ["departments__categories"],
+      });
       _item.appendChild(_list);
 
       printCategories({ categories: subDepartment.category, divMaster: _list });
@@ -92,14 +95,17 @@ export const printSubDepartments = ({ subDepartments, divMaster }) => {
 
 export const printCategories = ({ categories, divMaster }) => {
   for (let category of categories) {
-    const _item = Element({ tag: "li", classList: ["departments__item"] });
+    const _item = Element({
+      tag: "li",
+      classList: ["departments__categories__item"],
+    });
     divMaster.appendChild(_item);
 
     const _link = Element({
       tag: "a",
       textContent: category.name,
       href: category.link,
-      classList: ["categories__link"],
+      classList: ["departments--link"],
     });
 
     _item.appendChild(_link);
