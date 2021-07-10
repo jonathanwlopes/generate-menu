@@ -1,0 +1,31 @@
+#root {
+  max-width: 1366px;
+  margin: 0 auto;
+}
+#root .departments {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: space-evenly;
+}
+#root .departments__item {
+  position: relative;
+}
+#root .departments__item--title {
+  color: #bf7e04;
+  cursor: pointer;
+}
+#root .departments__item:hover .departments__sub-departments {
+  transform: rotateX(0) translateX(-50%);
+  opacity: 1;
+}
+#root .departments__sub-departments {
+  list-style: none;
+  opacity: 0.25;
+  transform: translateX(-50%) rotateX(-90deg);
+  position: absolute;
+  left: 50%;
+}
+
+/*# sourceMappingURL=style.css.map */
