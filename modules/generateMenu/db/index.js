@@ -1,6 +1,7 @@
 export const dbMenu = {
   departments: [
     {
+      active: true,
       name: "Mercearia",
       link: "/mercearia",
       subDepartment: [
@@ -29,6 +30,7 @@ export const dbMenu = {
       ],
     },
     {
+      active: true,
       name: "Frutas",
       link: "/frutas",
       subDepartment: [
@@ -60,9 +62,21 @@ export const dbMenu = {
       ],
     },
     {
+      active: false,
       name: "Produtos Naturais",
       link: "/produtos-naturais",
     },
+    {
+      active: true,
+      name: "Produtos Naturais",
+      link: "/produtos-naturais",
+    },
+    {
+      active: true,
+      name: "Produtos Naturais",
+      link: "/produtos-naturais",
+    },
+
   ],
 
   getDepartments: () => {

@@ -31,34 +31,43 @@ export const structure = ({ divMaster }) => {
 };
 
 export const printDepartments = ({ departments, divMaster }) => {
+  if (departments.length >= 6)
+    return console.error(
+      "Limite máximo de departamentos na base de dados acima do permitido."
+    );
+
   for (let department of departments) {
-    const _item = Element({
-      tag: "li",
-      classList: ["departments__item"],
-    });
-
-    divMaster.appendChild(_item);
-
-    const _link = Element({
-      tag: "span",
-      textContent: department.name,
-      classList: ["departments--title"],
-    });
-
-    _item.appendChild(_link);
-
-    if (department.subDepartment) {
-      const _list = Element({
-        tag: "ul",
-        classList: ["departments__sub-departments"],
+    if (department.active) {
+      const _item = Element({
+        tag: "li",
+        classList: ["departments__item"],
       });
 
-      _item.appendChild(_list);
+      divMaster.appendChild(_item);
 
-      printSubDepartments({
-        subDepartments: department.subDepartment,
-        divMaster: _list,
+      const _link = Element({
+        tag: "span",
+        textContent: department.name,
+        classList: ["departments--title"],
       });
+
+      _item.appendChild(_link);
+
+      if (department.subDepartment) {
+        const _list = Element({
+          tag: "ul",
+          classList: ["departments__sub-departments"],
+        });
+
+        _item.appendChild(_list);
+
+        printSubDepartments({
+          subDepartments: department.subDepartment,
+          divMaster: _list,
+        });
+      }
+    } else {
+      console.info(`${department.name} está inativo na base de dados.`);
     }
   }
 };
