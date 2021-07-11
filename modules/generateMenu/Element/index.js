@@ -14,8 +14,13 @@ export const Element = ({ tag, ...props }) => {
     _element.href = props.href;
   }
 
-  if(props.classList){
-    _element.classList.add(...props.classList)
+  if (props.classList) {
+    _element.classList.add(...props.classList);
+  }
+
+  if (props.src) {
+    _element.setAttribute("src", props.src);
+    _element.setAttribute("alt", props.alt);
   }
 
   return _element;
